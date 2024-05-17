@@ -1,6 +1,7 @@
 import React, { useContext, useEffect  } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/home.css";
+import Cards from "../pages/Cards.jsx";
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);
@@ -25,6 +26,8 @@ export const Home = () => {
 					<li key={index}>{suggestion.suggestion}</li>
 				))}
 			</ul>
+			
+
 		</div>
 	);
 };
