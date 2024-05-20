@@ -1,7 +1,48 @@
-/*
-    home.css: This website contains selectors only used in home.css
 
-    All pages share the styles on index.css but you should create 
-    one more css for each page that will contain the selected used 
-    on that page only (the ones not reused in other pages).
-*/
+  
+ .card {
+    background-color: #F5F5DC; 
+    border: 1px solid #D2B48C; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    padding: 20px; 
+    border-radius: 8px; 
+    width: 35rem; 
+    text-align: center;
+    justify-items: center;
+    align-items: center;  
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  } 
+  
+  
+  .card-title {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #6B4226; 
+  }
+  
+
+  .card-img-top {
+    border-radius: 5px; 
+    margin-bottom: 15px; 
+  }
+  
+ 
+  .card-text {
+    font-family: 'Times New Roman', serif; 
+    color: #4B3B2B; 
+  }
+  
+  
+  .btn-primary {
+    background-color: #8B4513; 
+    border-color: #8B4513; 
+    font-family: 'Arial', sans-serif; 
+  }
+  
+  .btn-primary:hover {
+    background-color: #A0522D; 
+    border-color: #A0522D; 
+  }
+  

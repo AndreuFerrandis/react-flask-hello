@@ -1,19 +1,31 @@
 import React from "react";
 import MyCard from "../pages/Cards.jsx";
+import "../../styles/index.css";
+import image from "../../img/fondo1.jpg";
+
+
 
 
 export const Inicio = () => {
 	
 
-	return (
-		<div className="text-center mt-5">
-			<h1>Inicio</h1>
-			<MyCard 
-			username={"Londres"}
-			img= {"https://images.pexels.com/photos/18338026/pexels-photo-18338026/free-photo-of-ciudad-punto-de-referencia-edificio-puente.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"}
-			bodytext={"bendita la luzzzz uuuu bendita la luz de tu mirada"}
-			/>
 
+	return (
+		<div className="">
+			
+			{/* <div className="background">
+				<img src={image}/>
+				
+			</div> */}
+			
+			<div className="content">
+			<h1 className="inicio">MAIK_GP</h1>
+				<MyCard
+					username={"Londres"}
+					img={"https://www.terranea.es/assets/images/razas/pastor_aleman2.jpg"}
+					bodytext={"bendita la luzzzz uuuu bendita la luz de tu mirada"}
+				/>
+			</div>
 		</div>
 	);
 };
