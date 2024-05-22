@@ -1,6 +1,13 @@
+
+import React, { useContext, useEffect  } from "react";
+import { Context } from "../store/appContext";
+import "../../styles/inicio.css";
+import Cards from "../pages/Cards.jsx";
+
 import React from "react";
 import "../../styles/home.css";
 import { Link } from "react-router-dom";
+
 
 export const Home = () => {
 
@@ -11,7 +18,12 @@ export const Home = () => {
 				<img src="https://images.pexels.com/photos/2027105/pexels-photo-2027105.jpeg" 
 					style={{ width: "100vw", height: "100vh", objectFit: "cover" }}/>
 			</div>
-
+			<h1>Suggestions</h1>
+			<ul>
+				{store.suggestions.map((suggestion, index) => (
+					<li key={index}>{suggestion.suggestion}</li>
+				))}
+			</ul>
 			<div className="buttons">
 				<Link to={"/signup"}>
 					<button className="btn btn-success">Sign Up</button>
@@ -22,6 +34,7 @@ export const Home = () => {
 				</Link>
 			</div>
 			
+
 		</div>
 	);
 };

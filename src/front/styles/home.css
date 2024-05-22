@@ -1,3 +1,4 @@
+
 .buttons{
     display:flex;
     margin-left:40%;
@@ -10,7 +11,7 @@
     padding: 0;            /* Quitar el relleno interno */
     margin: 0;             /* Quitar el margen externo */
     box-shadow: none;      /* Quitar la sombra */
-    text-decoration: underline; /* Quitar decoraciones del texto */
+    text-decoration: underline; /* Poner decoraciones del texto*/
     color: inherit;        /* Heredar el color del texto del elemento padre */
     font: inherit;         /* Heredar la fuente del elemento padre */
     cursor: pointer;       /* Mostrar el cursor de mano */
@@ -26,3 +27,4 @@
     font-size: 30px;
     padding: 5px;
 }
+
