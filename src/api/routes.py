@@ -7,7 +7,7 @@ from api.utils import generate_sitemap, APIException
 from flask_cors import CORS
 from flask_jwt_extended import create_access_token
 
-
+app = Flask(__name__)
 api = Blueprint('api', __name__)
 
 # Allow CORS requests to this API
@@ -151,8 +151,7 @@ def handle_get_suggestion():
     users_serialized = []
     for suggestion in users:
         users_serialized.append(suggestion.serialize())
-    print (users)
-
+    
     response_body = {
         "suggestion": users_serialized
     }
