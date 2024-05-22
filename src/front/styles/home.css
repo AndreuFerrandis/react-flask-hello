@@ -1,0 +1,30 @@
+
+.buttons{
+    display:flex;
+    margin-left:40%;
+    top:75%;
+    position: absolute;
+}
+.buttons .btn{
+    border: none;          /* Quitar el borde */
+    background: none;      /* Quitar el fondo */
+    padding: 0;            /* Quitar el relleno interno */
+    margin: 0;             /* Quitar el margen externo */
+    box-shadow: none;      /* Quitar la sombra */
+    text-decoration: underline; /* Poner decoraciones del texto*/
+    color: inherit;        /* Heredar el color del texto del elemento padre */
+    font: inherit;         /* Heredar la fuente del elemento padre */
+    cursor: pointer;       /* Mostrar el cursor de mano */
+    outline: none; 
+    color: rgb(230, 230, 230);
+    font-size: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bolder;
+    padding: 5px;
+}
+.separator{
+    color:white;
+    font-size: 30px;
+    padding: 5px;
+}
+
