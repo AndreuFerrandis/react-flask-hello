@@ -6,6 +6,7 @@
     },
     "[javascriptreact]": {
         "editor.defaultFormatter": "vscode.typescript-language-features"
+
     },
     "[css]": {
         "editor.defaultFormatter": "vscode.css-language-features"
