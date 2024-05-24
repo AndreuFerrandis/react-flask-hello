@@ -3,7 +3,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			isLoggedIn:false,
+            
 		},
+        suggestions:[],
 		actions: {
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
@@ -39,7 +41,7 @@ setLogout:()=>{
 /* --------- FUNCION FLUX (fetch) PARA LOGIN----------- */
 
 login: async (email, password) => {
-    await fetch('https://super-duper-barnacle-74g6vpw66q42pwr5-3001.app.github.dev/api/login', {
+    await fetch(`${process.env.BACKEND_URL}/api/login`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -66,19 +68,38 @@ login: async (email, password) => {
     });
 },
 
-         
+register_User: (name,email, password) =>{
+    fetch(`${process.env.BACKEND_URL}/api/signup`,{
+        method:'POST',
+        headers:{
+            'Content-Type' : 'application/json'
+        },
+        body : JSON.stringify({
+            "name": name,
+            "email": email,
+            "password": password,
+           }),
+})
+    .then(Response => Response.json())
+    .then(data => {
+        console.log(data); 
+        
+    })
+    .catch(error => console.log('Error parcero', error))
+
+}, 
     getPosts: async () => {
         try {
-            const response = await fetch('https://psychic-fortnight-5gg54q5jwv67fv9gj-3001.app.github.dev/api/post');
+            const response = await fetch(`${process.env.BACKEND_URL}/api/post`);
             const data = await response.json();
             setStore({ posts: data.img });
         } catch (error) {
-            console.error("Error fetching posts:", error);
+            console.log("Error fetching posts:", error);
         }
     },
     createPost: async (img, bodytext) => {
         try {
-            const response = await fetch('https://psychic-fortnight-5gg54q5jwv67fv9gj-3001.app.github.dev/api/post', {
+            const response = await fetch(`${process.env.BACKEND_URL}/api/post`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ img, bodytext })
@@ -87,13 +108,13 @@ login: async (email, password) => {
             getActions().getPosts(); // Refresh posts
             setStore({ message: data.msg });
         } catch (error) {
-            console.error("Error creating post:", error);
+            console.log("Error creating post:", error);
         }
     },
       
     updatePost: async (postId, img, bodytext) => {
         try {
-            const response = await fetch(`https://psychic-fortnight-5gg54q5jwv67fv9gj-3001.app.github.dev/api/post/${postId}`, {
+            const response = await fetch(`${process.env.BACKEND_URL}/api/post/${postId}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ img, bodytext })
@@ -102,39 +123,39 @@ login: async (email, password) => {
             getActions().getPosts(); // Refresh posts
             setStore({ message: data.msg });
         } catch (error) {
-            console.error("Error updating post:", error);
+            console.log("Error updating post:", error);
         }
     },
       
       
     deletePost: async (postId) => {
         try {
-            const response = await fetch(`https://psychic-fortnight-5gg54q5jwv67fv9gj-3001.app.github.dev/api/post/${postId}`, {
+            const response = await fetch(`${process.env.BACKEND_URL}/api/post/${postId}`, {
                 method: 'DELETE'
             });
             const data = await response.json();
             getActions().getPosts(); // Refresh posts
             setStore({ message: data.msg });
         } catch (error) {
-            console.error("Error deleting post:", error);
+            console.log("Error deleting post:", error);
         }
     },
       
       
     getSuggestions: async () => {
         try {
-            const response = await fetch('https://psychic-fortnight-5gg54q5jwv67fv9gj-3001.app.github.dev/api/suggestion');
+            const response = await fetch(`${process.env.BACKEND_URL}/api/suggestion`);
             const data = await response.json();
             setStore({ suggestions: data.suggestion });
         } catch (error) {
-            console.error("Error fetching suggestions:", error);
+            console.log("Error fetching suggestions:", error);
         }
     },
       
       
     createSuggestion: async (suggestion) => {
         try {
-            const response = await fetch('https://psychic-fortnight-5gg54q5jwv67fv9gj-3001.app.github.dev/api/suggestion', {
+            const response = await fetch(`${process.env.BACKEND_URL}/api/suggestion`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ suggestion })
@@ -143,7 +164,7 @@ login: async (email, password) => {
             getActions().getSuggestions(); // Refresh suggestions
             setStore({ message: data.msg });
         } catch (error) {
-            console.error("Error creating suggestion:", error);
+            console.log("Error creating suggestion:", error);
         }
     },
 
@@ -158,7 +179,7 @@ login: async (email, password) => {
                     setStore({ suggestions: data.suggestion });
                     console.log(data)
                 } catch (error) {
-                    console.error("Error fetching suggestions:", error);
+                    console.log("Error fetching suggestions:", error);
                 }
             },
 
@@ -174,9 +195,13 @@ login: async (email, password) => {
                     getActions().getSuggestions(); // Refresh suggestions
                     setStore({ message: data.msg });
                 } catch (error) {
-                    console.error("Error creating suggestion:", error);
+                    console.log("Error creating suggestion:", error);
                 }
-            }
+            },
+    /* ------------API EXTERNA DE DOG API ------------* */
+    
 
-    };
+    }
+}
+}
 export default getState;

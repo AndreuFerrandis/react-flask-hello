@@ -1,29 +1,30 @@
-
 import React, { useContext, useEffect  } from "react";
 import { Context } from "../store/appContext";
-import "../../styles/inicio.css";
-import Cards from "../pages/Cards.jsx";
-
-import React from "react";
 import "../../styles/home.css";
 import { Link } from "react-router-dom";
-
+import Logo from "../../img/logo.png";
 
 export const Home = () => {
-
+	const {store, actions} =useContext(Context);
+	
+	useEffect(() => {
+		actions.getSuggestions();
+	  }, [actions]);
+	
 	return (
 		<div className="text-center">
+			<h1 className="nameLog"> Dog Meet</h1>
 			<div>
-				<h1 style={{ position: "absolute", top: "70%", left: "50%", transform: "translate(-50%, -50%)", color:"white"}}> Dog Meet</h1>
-				<img src="https://images.pexels.com/photos/2027105/pexels-photo-2027105.jpeg" 
-					style={{ width: "100vw", height: "100vh", objectFit: "cover" }}/>
+				<img src={Logo} className="logo"/>
 			</div>
-			<h1>Suggestions</h1>
-			<ul>
-				{store.suggestions.map((suggestion, index) => (
-					<li key={index}>{suggestion.suggestion}</li>
-				))}
-			</ul>
+			<div className="video-background">
+				<video autoPlay loop muted>
+					<source src="https://videos.pexels.com/video-files/5469105/5469105-hd_1920_1080_24fps.mp4" type="video/mp4" />
+					Your browser does not support the video tag.
+				</video>
+			</div>
+			
+			
 			<div className="buttons">
 				<Link to={"/signup"}>
 					<button className="btn btn-success">Sign Up</button>
