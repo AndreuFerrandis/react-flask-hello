@@ -14,9 +14,11 @@ export const SignUp = () => {
 	 const[password, setPassword]= useState("")
 	 /* ------------------------------------------------- */
 	 const handleSubmit = e =>{
+         /**  poner las obligaciones name email y password */
 		e.preventDefault();
 
         actions.register_User(name, email, password );
+       
 		setName("");
 		setEmail("");
 		setPassword("");
@@ -54,6 +56,7 @@ export const SignUp = () => {
                                     placeholder="Name" 
                                     value={name}
 					                onChange={e =>setName(e.target.value)}
+                                    required
                                     />
                     </div>
                     <div className="input-group mb-4 mt-4" id="field">
@@ -65,6 +68,7 @@ export const SignUp = () => {
                                     placeholder="E-mail" 
                                     value={email}
 					                onChange = {e => setEmail(e.target.value)}
+                                    required
                                     />
                     </div>
 
@@ -77,7 +81,7 @@ export const SignUp = () => {
                                 placeholder="Password" 
                                 value={password}
 					            onChange = {e => setPassword(e.target.value)}
-                                
+                                required
                                 />
                     </div>
 

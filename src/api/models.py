@@ -78,5 +78,5 @@ class Suggestion (db.Model):
             "id": self.id,
             "suggestion": self.suggestion,
             # do not serialize the password, its a security breach
-        },
+        }
 
