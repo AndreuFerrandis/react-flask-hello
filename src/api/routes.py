@@ -2,7 +2,7 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User, Post, Comment, Like, Suggestion
+from api.models import db, User, Post, Comment, Like, Suggestion, Dog
 from api.utils import generate_sitemap, APIException
 from flask_cors import CORS
 from flask_jwt_extended import create_access_token
@@ -204,6 +204,9 @@ def handle_delete_post(post_id):
     db.session.commit()
 
     return jsonify({"msg": "Post deleted"}), 200
+
+
+
 
 #--------------------------------------------------------
 
