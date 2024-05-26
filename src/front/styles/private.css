@@ -1,0 +1,69 @@
+/* General Form Styling */
+.post-form {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+/* Form Group Styling */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Estilo de la imagen al aparecer */
+.image-preview {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.preview-img {
+    width: 100%; /* Asegura que la imagen ocupe todo el ancho disponible */
+    max-width: 500px; /* Limita el ancho máximo para que no se exceda del contenedor */
+    max-height: 500px; /* Aumenta la altura máxima para que la imagen se vea más grande */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenedor del botón de submit */
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Agrega separación superior del botón respecto a la imagen */
+}
+
+/* Botón del submit */
+.submit-button {
+    width: auto; /* Permite que el botón se ajuste a su contenido */
+    padding: 10px 20px; /* Ajusta el relleno para hacer el botón menos ancho */
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.8s ease;
+}
+
+.submit-button:hover {
+    background-color: #075b81;
+}
