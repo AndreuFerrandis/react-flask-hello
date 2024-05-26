@@ -117,8 +117,10 @@ const getState = ({ getStore, getActions, setStore }) => {
                     const data = await response.json();
                     getActions().getPosts(); // Refresh posts
                     setStore({ message: data.msg });
+                    return data;
                 } catch (error) {
                     console.log("Error creating post:", error);
+                    throw error;
                 }
             },
 

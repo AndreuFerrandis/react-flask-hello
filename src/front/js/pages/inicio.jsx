@@ -1,33 +1,21 @@
 import React from "react";
 import MyCard from "../pages/Cards.jsx";
-import "../../styles/index.css";
-import image from "../../img/fondo1.jpg";
+import "../../styles/inicio.css"; // Asegúrate de importar el archivo CSS correcto
 import '@fortawesome/fontawesome-free/css/all.min.css';
-
-
+import { Link } from "react-router-dom";
 
 
 export const Inicio = () => {
-	
-
-
-	return (
-		<div className="">
-			
-			{/* <div className="background">
-				<img src={image}/>
-				
-			</div> */}
-			
-			<div className="content">
-			<h1 className="inicio">DogMeet</h1>
-				<MyCard
-					username={"Name usuario"}
-					img={"https://www.terranea.es/assets/images/razas/pastor_aleman2.jpg"}
-					bodytext={"bendita la luzzzz uuuu bendita la luz de tu mirada"}
-				/>
-				
-			</div>
-		</div>
-	);
+  return (
+    <div className="inicio-container">
+      <div className="content">
+        <h1 className="inicio-title">DogMeet</h1>
+        <MyCard
+          username={"Name usuario"}
+          img={"https://st.depositphotos.com/28578506/53990/i/450/depositphotos_539903784-stock-photo-black-wolf-black-background.jpg"}
+          bodytext={"Insert coment here"}
+        />
+      </div>
+    </div>
+  );
 };
