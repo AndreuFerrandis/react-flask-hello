@@ -1,39 +1,38 @@
 /* Establece el color de fondo de toda la página */
 body {
-  background-color: #E5E6EE;
+  background-color: #8d8c8c;
   margin: 0; /* Elimina el margen predeterminado del body */
   font-family: Arial, sans-serif; /* Estilo de fuente global */
 }
 
 /* Estilo para el Navbar */
 .navbar-light {
-  background-color: #E5E6EE !important;
+  background-color: #333 !important;
 }
 
 .navbar-brand, .btn-primary {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  background-color: #E5E6EE;
-  border: 1px solid #333;
+  background-color: #e5e6ee00;
+  border: 1px solid #746d6d;
   
 }
 
 /* Estilo específico para el botón Suggestions */
 .tex {
-  background-color: #E5E6EE; /* Fondo negro */
-  color: #000000; /* Texto blanco */
+  background-color: #8d8c8c;
+  color: #000000;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  border: none;
+  border: none; /* Sin borde por defecto */
   padding: 10px 20px;
   border-radius: 5px;
-  text-decoration: underline; /* Elimina el subrayado del enlace */
   font-size: 20px;
-  border: 1px solid #000000;
-  
-  
+}
+.tex:hover {
+  border: 1px solid #000000; /* Aparece el borde negro al pasar el ratón */
 }
 
 .navbar-brand .tex:hover {
-  background-color: #E5E6EE;
+  background-color: #8d8c8c;
   border: 1px solid #000000;
   
   
@@ -41,20 +40,19 @@ body {
 
 /* Estilo específico para el botón Logout */
 .ml-auto .btnlog {
-  background-color: #E5E6EE; /* Fondo negro */
+  background-color: #8d8c8c; /* Fondo negro */
   color: #000000; /* Texto blanco */
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
-  text-decoration: underline; /* Elimina el subrayado del enlace */
   font-size: 20px;
   
   
 }
 
 .ml-auto .btnlog:hover {
-  background-color: #E5E6EE;
+  background-color: #e5e6ee00;
   border: 1px solid #000000;
    
    /* Fondo gris oscuro al pasar el ratón */
@@ -80,16 +78,19 @@ body {
 
 /* Estilos para MyCard */
 .card {
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(240, 240, 240);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px; /* Ajusta el padding para mayor espacio interno */
-  border-radius: 5px;
+  padding: 10px; /* Ajusta el padding para mayor espacio interno */
   width: 100%;
-  max-width: 600px; /* Ajusta el ancho máximo de la tarjeta */
+  max-width: 700px; /* Ajusta el ancho máximo de la tarjeta */
   height: auto;
-  min-height: 500px; /* Ajusta la altura mínima para alargar la tarjeta */
+  min-height: 700px; /* Ajusta la altura mínima para alargar la tarjeta */
   text-align: center;
-  margin: 20px auto; /* Centra la tarjeta en su contenedor */
+  margin: 50px auto; /* Centra la tarjeta en su contenedor */
+}
+.card:hover {
+  transform: translateY(-5px); /* Levanta la tarjeta ligeramente al pasar el ratón sobre ella */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Añade una sombra más pronunciada al hacer hover */
 }
 
 .card-title {
@@ -101,8 +102,8 @@ body {
   border-radius: 5px;
   margin-bottom: 20px;
   width: 100%; /* La imagen ocupará todo el ancho de la tarjeta */
-  height: auto; /* La altura se ajustará automáticamente para mantener la proporción */
-  max-height: 400px; /* Incrementa la altura máxima de la imagen */
+  max-height: 700px; /* Incrementa la altura máxima de la imagen */
+  min-height: 520px; /* Establece una altura mínima para la imagen */
   object-fit: cover; /* La imagen se ajustará dentro del contenedor sin distorsión */
 }
 
@@ -113,23 +114,27 @@ body {
 
 /* Estilos para el botón Create Post */
 .create-post-btn {
-  background-color: #000; /* Fondo negro */
-  color: #fff; /* Texto blanco */
+  background-color: #02020202; /* Fondo negro */
+  color: #000000; /* Texto blanco */
   border: none;
   padding: 10px 20px;
-  font-size: 16px;
+  font-size: 20px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 20px auto; /* Centra el botón horizontalmente */
   border-radius: 5px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+ 
+  
 }
 
 .create-post-btn i {
   margin-right: 10px; /* Espacio entre el icono y el texto */
+  
 }
 
 .create-post-btn:hover {
-  background-color: #333; /* Fondo gris oscuro al pasar el ratón */
+  background-color: #33333300; /* Fondo gris oscuro al pasar el ratón */
 }

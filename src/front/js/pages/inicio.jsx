@@ -11,9 +11,9 @@ export const Inicio = () => {
       <div className="content">
         <h1 className="inicio-title">DogMeet</h1>
         <MyCard
-          username={"Name usuario"}
+          username={""}
           img={"https://st.depositphotos.com/28578506/53990/i/450/depositphotos_539903784-stock-photo-black-wolf-black-background.jpg"}
-          bodytext={"Insert coment here"}
+          bodytext={""}
         />
       </div>
     </div>
